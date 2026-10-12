@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Hagar Alaaeldien — Software Tester portfolio. Manual testing, API testing, integration testing, QA, IoT and AI-enabled systems." />
+  <title>Hagar Alaaeldien | Software Tester</title>
+
+  <style>
+    :root {
+      --primary: #4E7C7C;
+      --secondary: #8AAE96;
+      --blue: #6E93AC;
+      --bg: #FAF9F6;
+      --text: #3A3A3A;
+      --muted: #727272;
+      --white: #FFFFFF;
+      --line: #DCE2DE;
+      --soft-teal: #E8F0EF;
+      --soft-sage: #EEF4EF;
+      --soft-blue: #EDF3F6;
+      --shadow: 0 12px 35px rgba(58, 58, 58, 0.07);
+      --radius: 18px;
+      --max-width: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    /* Navigation */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(250, 249, 246, 0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(220, 226, 222, 0.85);
+    }
+
+    .nav-inner {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--primary);
+      font-size: 1.05rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 26px;
+      align-items: center;
+      font-size: 0.88rem;
+      color: #555;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-cta {
+      padding: 9px 15px;
+      border: 1px solid var(--primary);
+      border-radius: 999px;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 690px;
+      display: grid;
+      align-items: center;
+      padding: 90px 0 75px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: var(--blue);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      font-size: 0.76rem;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      color: var(--primary);
+      font-size: clamp(3.2rem, 8vw, 6.5rem);
+      line-height: 0.92;
+      letter-spacing: -0.065em;
+      max-width: 780px;
+    }
+
+    .hero h2 {
+      font-size: clamp(1.25rem, 2.4vw, 1.8rem);
+      margin: 22px 0 20px;
+      letter-spacing: -0.025em;
+      font-weight: 700;
+    }
+
+    .hero-lead {
+      font-size: 1.12rem;
+      max-width: 700px;
+      color: #515151;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 19px;
+      border-radius: 999px;
+      font-weight: 750;
+      font-size: 0.9rem;
+      border: 1px solid var(--primary);
+      transition: transform .2s ease, background .2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button.primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .button.secondary {
+      background: transparent;
+      color: var(--primary);
+    }
+
+    .hero-panel {
+      position: relative;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-panel::before {
+      content: "";
+      position: absolute;
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: var(--soft-sage);
+      top: -25px;
+      right: -25px;
+      z-index: -1;
+    }
+
+    .panel-label {
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .11em;
+      font-size: .7rem;
+      font-weight: 800;
+    }
+
+    .panel-title {
+      margin: 8px 0 20px;
+      font-size: 1.35rem;
+      font-weight: 800;
+    }
+
+    .capability {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 13px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: .9rem;
+    }
+
+    .capability:last-child { border-bottom: 0; }
+
+    .capability span:last-child {
+      color: var(--blue);
+      text-align: right;
+    }
+
+    /* Sections */
+    section {
+      padding: 105px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-heading {
+      display: block;
+      margin-bottom: 50px;
+    }
+
+    .section-heading-main {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .section-number {
+      color: var(--secondary);
+      font-size: .78rem;
+      font-weight: 850;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding-top: 0;
+    }
+
+    h3 {
+      margin: 0;
+      color: var(--primary);
+      font-size: clamp(2rem, 4vw, 3.3rem);
+      line-height: 1.05;
+      letter-spacing: -.045em;
+    }
+
+    .section-intro {
+      max-width: 740px;
+      color: #5c5c5c;
+      margin-top: 15px;
+      font-size: 1.03rem;
+    }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+    }
+
+    .value-box {
+      background: var(--soft-teal);
+      border-radius: var(--radius);
+      padding: 28px;
+      border: 1px solid #d7e3e0;
+    }
+
+    .value-box h4,
+    .card h4 {
+      margin: 0 0 10px;
+      font-size: 1.1rem;
+    }
+
+    .value-box strong {
+      font-size: 1.08rem;
+      line-height: 1.55;
+      display: block;
+    }
+
+    .check-list {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .check-list li {
+      position: relative;
+      padding: 0 0 12px 25px;
+    }
+
+    .check-list li::before {
+      content: "•";
+      position: absolute;
+      left: 5px;
+      color: var(--secondary);
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+
+    /* Services */
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 25px;
+      box-shadow: 0 8px 25px rgba(58,58,58,.035);
+    }
+
+    .service-card {
+      min-height: 190px;
+    }
+
+    .service-number {
+      color: var(--blue);
+      font-weight: 800;
+      font-size: .75rem;
+      letter-spacing: .1em;
+      margin-bottom: 22px;
+    }
+
+    .card p {
+      margin: 0;
+      color: #626262;
+      font-size: .92rem;
+    }
+
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .skill-group {
+      min-height: 150px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 17px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--soft-teal);
+      color: var(--primary);
+      font-size: .76rem;
+      font-weight: 700;
+    }
+
+    .tag.blue {
+      background: var(--soft-blue);
+      color: #587B90;
+    }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      margin-left: 10px;
+      border-left: 1px solid var(--secondary);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding: 0 0 45px 36px;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 5px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--primary);
+      box-shadow: 0 0 0 5px var(--bg);
+    }
+
+    .timeline-date {
+      color: var(--blue);
+      font-size: .8rem;
+      font-weight: 800;
+      margin-bottom: 5px;
+    }
+
+    .timeline h4 {
+      margin: 0 0 8px;
+      font-size: 1.18rem;
+    }
+
+    .timeline ul {
+      margin: 10px 0 0;
+      padding-left: 19px;
+      color: #5f5f5f;
+      font-size: .92rem;
+    }
+
+    /* Projects */
+    .project-list {
+      display: grid;
+      gap: 30px;
+    }
+
+    .project {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 32px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .project.featured {
+      border-left: 5px solid var(--primary);
+    }
+
+    .project-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .project-kicker {
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      font-size: .72rem;
+      font-weight: 850;
+      margin-bottom: 9px;
+    }
+
+    .project h4 {
+      margin: 0;
+      color: var(--primary);
+      font-size: 1.55rem;
+      line-height: 1.15;
+    }
+
+    .project-date {
+      color: var(--muted);
+      font-size: .78rem;
+      white-space: nowrap;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 38px;
+      margin-top: 26px;
+    }
+
+    .project-block-title {
+      text-transform: uppercase;
+      letter-spacing: .09em;
+      font-size: .68rem;
+      font-weight: 850;
+      color: var(--muted);
+      margin-bottom: 7px;
+    }
+
+    .project p {
+      margin: 0;
+      font-size: .92rem;
+      color: #5d5d5d;
+    }
+
+    .project ul {
+      margin: 0;
+      padding-left: 19px;
+      color: #5d5d5d;
+      font-size: .9rem;
+    }
+
+    .recognition {
+      margin-top: 24px;
+      padding: 17px 19px;
+      border-radius: 13px;
+      background: var(--soft-sage);
+      border: 1px solid #dce8de;
+      font-size: .9rem;
+    }
+
+    .additional-projects {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    /* Credentials */
+    .credential-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .credential {
+      padding: 25px;
+    }
+
+    .credential small {
+      color: var(--blue);
+      font-weight: 750;
+    }
+
+    .achievement {
+      grid-column: 1 / -1;
+      background: var(--soft-sage);
+      border-color: #dce8de;
+    }
+
+    /* Contact */
+    .contact {
+      padding-bottom: 70px;
+    }
+
+    .contact-box {
+      background: var(--primary);
+      color: white;
+      border-radius: 28px;
+      padding: 55px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .contact-box h3 {
+      color: white;
+    }
+
+    .contact-box p {
+      max-width: 680px;
+      color: rgba(255,255,255,.84);
+    }
+
+    .contact-links {
+      display: grid;
+      gap: 10px;
+      min-width: 250px;
+    }
+
+    .contact-link {
+      border: 1px solid rgba(255,255,255,.35);
+      border-radius: 999px;
+      padding: 10px 15px;
+      font-size: .84rem;
+      text-align: center;
+    }
+
+    .contact-link:hover {
+      background: rgba(255,255,255,.1);
+    }
+
+    footer {
+      padding: 25px 0 45px;
+      color: var(--muted);
+      font-size: .78rem;
+      text-align: center;
+    }
+
+    /* Responsive */
+    @media (max-width: 850px) {
+      .nav-links a:not(.nav-cta) { display: none; }
+
+      .hero-grid,
+      .about-grid,
+      .skills-grid,
+      .credential-grid,
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: 70px;
+      }
+
+      .hero-panel {
+        max-width: 620px;
+      }
+
+      .section-heading {
+        margin-bottom: 38px;
+      }
+
+      .section-heading-main {
+        gap: 8px;
+      }
+
+      .service-grid,
+      .additional-projects {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-links {
+        min-width: 0;
+      }
+    }
+
+    @media (max-width: 570px) {
+      .container {
+        width: min(var(--max-width), calc(100% - 28px));
+      }
+
+      section {
+        padding: 75px 0;
+      }
+
+      .hero {
+        padding: 60px 0;
+      }
+
+      .service-grid,
+      .additional-projects {
+        grid-template-columns: 1fr;
+      }
+
+      .project,
+      .contact-box {
+        padding: 24px;
+      }
+
+      .project-top {
+        display: block;
+      }
+
+      .project-date {
+        display: block;
+        margin-top: 8px;
+      }
+
+      h1 {
+        font-size: 3.7rem;
+      }
+    }
+
+    @media print {
+      nav { display: none; }
+      section, .hero { padding: 35px 0; }
+      body { background: white; }
+      .card, .project, .hero-panel { box-shadow: none; }
+      .contact-box { break-inside: avoid; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="container nav-inner">
+      <a href="#top" class="brand">HA</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Case Studies</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#credentials">Credentials</a>
+        <a href="Hagar_Alaaeldien_CV.pdf" class="nav-cta" download>Download CV</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <header class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">ISTQB® Certified • Software Testing</div>
+          <h1>Hagar<br>Alaaeldien</h1>
+          <h2>Manual QA for Web, Mobile &amp; AI-Powered Products</h2>
+          <p class="hero-lead">
+            I help startups and small software teams identify bugs, validate critical user workflows,
+            and document issues clearly through structured manual testing and practical API validation.
+          </p>
+
+          <div class="buttons">
+            <a class="button primary" href="#projects">View QA Case Studies</a>
+            <a class="button secondary" href="mailto:alaaeldienhagar@gmail.com?subject=Discuss%20a%20Testing%20Project&amp;body=Hi%20Hagar%2C%0A%0AI%27d%20like%20to%20discuss%20a%20testing%20project.%0A%0AProject%20or%20product%3A%0ATesting%20needed%3A%0ATimeline%3A%0A%0AThanks.">Discuss Your Testing Needs</a>
+            <a class="button secondary" href="Hagar_Alaaeldien_CV.pdf" download>Download CV</a>
+          </div>
+        </div>
+
+        <aside class="hero-panel">
+          <div class="panel-label">Core focus</div>
+          <div class="panel-title">Reliable software through structured testing.</div>
+
+          <div class="capability">
+            <span>Manual QA</span>
+            <span>Functional • Regression</span>
+          </div>
+          <div class="capability">
+            <span>Integration</span>
+            <span>API • System</span>
+          </div>
+          <div class="capability">
+            <span>Technical QA</span>
+            <span>SQL • Cloud • IoT</span>
+          </div>
+          <div class="capability">
+            <span>AI Validation</span>
+            <span>Accuracy • Edge cases</span>
+          </div>
+        </aside>
+      </div>
+    </header>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-heading-main">
+            <div class="section-number">01 / Profile</div>
+            <h3>About me</h3>
+            <p class="section-intro">
+              An engineering background applied to software quality, with a focus on clear
+              testing, practical investigation, and reliable system behavior.
+            </p>
+          </div>
+        </div>
+
+        <div class="about-grid">
+          <div>
+            <p>
+              I am a Communication & Information Engineering graduate from the University of
+              Science and Technology at Zewail City and an ISTQB®-certified Junior QA Engineer.
+              My testing experience covers manual test case design and execution, defect reporting,
+              functional and integration testing, API workflows, database validation, and Agile
+              methodologies.
+            </p>
+            <p>
+              I have also worked on systems that combine software with Raspberry Pi, Arduino,
+              sensors, mobile applications, AI models, and cloud services. This engineering
+              background helps me approach testing from both the user and system perspectives.
+            </p>
+            <p>
+              I am particularly interested in software testing roles where careful validation,
+              clear communication, and structured problem solving can contribute to reliable software.
+            </p>
+          </div>
+
+          <div>
+            <div class="value-box">
+              <h4>My value proposition</h4>
+              <strong>
+                I help software teams improve product reliability through structured manual testing,
+                clear defect reporting, and practical validation of application, API, and system workflows.
+              </strong>
+            </div>
+
+            <div style="height:18px"></div>
+
+            <h4>What differentiates me</h4>
+            <ul class="check-list">
+              <li>ISTQB® CTFL v4 and Testing with Generative AI certifications.</li>
+              <li>Hands-on manual QA and defect-reporting experience.</li>
+              <li>Engineering experience with hardware–software and real-time systems.</li>
+              <li>Technical foundation in Python, Java, SQL, Jira, Git, AWS, Firebase and Wireshark.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-heading-main">
+            <div class="section-number">02 / Services</div>
+            <h3>How I can help</h3>
+            <p class="section-intro">
+              Relevant for Software Tester roles and focused QA support for software products,
+              startups, SMEs, and AI/IoT-enabled applications.
+            </p>
+          </div>
+        </div>
+
+        <div class="service-grid">
+          <article class="card service-card">
+            <div class="service-number">01</div>
+            <h4>Manual & Functional Testing</h4>
+            <p>Test scenarios, test cases, functional validation, regression testing and system testing.</p>
+          </article>
+
+          <article class="card service-card">
+            <div class="service-number">02</div>
+            <h4>API & Integration Testing</h4>
+            <p>Validate API workflows and integrations between application components and services.</p>
+          </article>
+
+          <article class="card service-card">
+            <div class="service-number">03</div>
+            <h4>Defect Reporting</h4>
+            <p>Document defects clearly, support the defect lifecycle, and communicate findings with development teams.</p>
+          </article>
+
+          <article class="card service-card">
+            <div class="service-number">04</div>
+            <h4>Database & Data Validation</h4>
+            <p>Validate data consistency, input handling, and database behavior using SQL.</p>
+          </article>
+
+          <article class="card service-card">
+            <div class="service-number">05</div>
+            <h4>IoT & System Testing</h4>
+            <p>Test interactions between software, Raspberry Pi, Arduino, sensors, mobile applications, and cloud services.</p>
+          </article>
+
+          <article class="card service-card">
+            <div class="service-number">06</div>
+            <h4>AI / Model Validation</h4>
+            <p>Perform accuracy and edge-case testing for AI-enabled features and speech-recognition workflows.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-heading-main">
+            <div class="section-number">03 / Toolkit</div>
+            <h3>Skills & tools</h3>
+            <p class="section-intro">
+              A practical testing toolkit supported by programming, database, cloud, and systems knowledge.
+            </p>
+          </div>
+        </div>
+
+        <div class="skills-grid">
+          <article class="card skill-group">
+            <h4>Testing & QA</h4>
+            <div class="tags">
+              <span class="tag">SDLC</span><span class="tag">STLC</span>
+              <span class="tag">Functional</span><span class="tag">Integration</span>
+              <span class="tag">System</span><span class="tag">Regression</span>
+              <span class="tag">Black-box</span><span class="tag">White-box</span>
+              <span class="tag">Test Case Design</span><span class="tag">Test Reporting</span>
+              <span class="tag">Defect Lifecycle</span><span class="tag">Bug Reporting</span>
+            </div>
+          </article>
+
+          <article class="card skill-group">
+            <h4>Test Design & Agile</h4>
+            <div class="tags">
+              <span class="tag blue">Boundary Value Analysis</span>
+              <span class="tag blue">Equivalence Partitioning</span>
+              <span class="tag blue">Test Plan Writing</span>
+              <span class="tag blue">Scrum</span>
+              <span class="tag blue">Kanban</span>
+              <span class="tag blue">XP</span>
+            </div>
+          </article>
+
+          <article class="card skill-group">
+            <h4>Tools</h4>
+            <div class="tags">
+              <span class="tag">Jira</span><span class="tag">Trello</span>
+              <span class="tag">SQL Server</span><span class="tag">Git</span>
+              <span class="tag">Docker</span><span class="tag">AWS</span>
+              <span class="tag">Wireshark</span><span class="tag">VS Code</span>
+            </div>
+          </article>
+
+          <article class="card skill-group">
+            <h4>Programming & Platforms</h4>
+            <div class="tags">
+              <span class="tag blue">Python</span><span class="tag blue">Java</span>
+              <span class="tag blue">C++</span><span class="tag blue">C</span>
+              <span class="tag blue">SQL</span><span class="tag blue">Linux</span>
+              <span class="tag blue">Firebase</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-heading-main">
+            <div class="section-number">04 / Experience</div>
+            <h3>Professional background</h3>
+            <p class="section-intro">
+              Experience across software testing, IoT/software engineering, and business development.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline">
+
+          <article class="timeline-item">
+            <div class="timeline-date">JUL 2026 — PRESENT</div>
+            <h4>Software Testing Trainee · Digital Egypt Pioneers Initiative</h4>
+            <ul>
+              <li>Applied ISTQB-based software testing principles throughout the Software Development Life Cycle (SDLC), covering test analysis, test design, and test management.</li>
+              <li>Developed and executed manual test cases and documented defects using Jira.</li>
+              <li>Strengthened professional communication, presentation, teamwork, career planning, and personal branding skills through soft-skills and English training.</li>
+            </ul>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-date">FEB 2025 — JUL 2025</div>
+            <h4>Business Development Representative · P-Vita</h4>
+            <ul>
+              <li>Researched and tracked grants, incubators, and VC opportunities aligned with startup goals.</li>
+              <li>Organized and validated opportunity requirements, documentation, and deadlines.</li>
+              <li>Prioritized and managed applications based on strategic fit, ensuring timely submissions.</li>
+            </ul>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-date">OCT 2023 — JUN 2024</div>
+            <h4>IoT & Software Engineering Intern · Zewail City</h4>
+            <ul>
+              <li>Tested and validated an IoT-enabled security robot integrating facial recognition, live streaming, and environmental sensing modules.</li>
+              <li>Performed functional and integration testing between sensors, Raspberry Pi, and mobile application components.</li>
+              <li>Validated real-time alert generation under varied environmental and network conditions, identifying and debugging communication issues.</li>
+              <li>Verified Firebase data logging and debugged UART communication to optimize system reliability during continuous operation.</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-heading-main">
+            <div class="section-number">05 / Selected work</div>
+            <h3>QA case studies</h3>
+            <p class="section-intro">
+              Selected projects that demonstrate manual testing, integration, API validation,
+              edge-case analysis, and real-world system testing.
+            </p>
+          </div>
+        </div>
+
+        <div class="project-list">
+
+          <article class="project featured">
+            <div class="project-top">
+              <div>
+                <div class="project-kicker">Flagship project · Graduation project</div>
+                <h4>Voice-Controlled Assistive Soft-Robotic Glove</h4>
+              </div>
+              <div class="project-date">Oct 2024 — Jun 2025</div>
+            </div>
+
+            <div class="tags">
+              <span class="tag">Flutter</span><span class="tag">Firebase</span>
+              <span class="tag">Python</span><span class="tag">Raspberry Pi</span>
+              <span class="tag">Arduino</span><span class="tag">TensorFlow Lite</span>
+            </div>
+
+            <div class="project-grid">
+              <div>
+                <div class="project-block-title">Project context</div>
+                <p>
+                  A voice-controlled rehabilitation glove integrating embedded hardware,
+                  a mobile application, cloud services, and a TinyML speech-recognition component.
+                </p>
+              </div>
+
+              <div>
+                <div class="project-block-title">My QA contribution</div>
+                <ul>
+                  <li>Performed functional and integration testing across Raspberry Pi and Arduino components.</li>
+                  <li>Validated bilingual (English/Arabic) Flutter application workflows.</li>
+                  <li>Validated secure data handling and reliable API communication.</li>
+                  <li>Conducted edge-case and accuracy testing for TinyML speech-recognition models.</li>
+                  <li>Tested and optimized wake-word detection performance.</li>
+                  <li>Debugged real-time synchronization and hardware–software communication issues.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="recognition">
+              <strong>Recognition:</strong> Selected as one of 3 winning projects out of 44 in the
+              Edafa VC incubation program at the university's graduation exhibition.
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-top">
+              <div>
+                <div class="project-kicker">IoT testing</div>
+                <h4>IoT-Enabled Security Robot</h4>
+              </div>
+              <div class="project-date">Oct 2023 — Jun 2024</div>
+            </div>
+
+            <div class="tags">
+              <span class="tag">Raspberry Pi</span><span class="tag">Sensors</span>
+              <span class="tag">Mobile App</span><span class="tag">Firebase</span>
+              <span class="tag">UART</span><span class="tag">IoT</span>
+            </div>
+
+            <div class="project-grid">
+              <div>
+                <div class="project-block-title">System scope</div>
+                <p>
+                  An IoT-enabled security robot integrating facial recognition, live streaming,
+                  environmental sensing, a Raspberry Pi, and a mobile application.
+                </p>
+              </div>
+
+              <div>
+                <div class="project-block-title">Testing work</div>
+                <ul>
+                  <li>Performed functional and integration testing between sensors, Raspberry Pi, and mobile application components.</li>
+                  <li>Validated real-time alert generation under varied environmental and network conditions.</li>
+                  <li>Identified and debugged communication issues affecting system behavior.</li>
+                  <li>Verified Firebase data logging.</li>
+                  <li>Debugged UART communication to improve reliability during continuous operation.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-top">
+              <div>
+                <div class="project-kicker">Web / API testing</div>
+                <h4>Serverless Budget Tracker</h4>
+              </div>
+              <div class="project-date">Nov 2024 — Jan 2025</div>
+            </div>
+
+            <div class="tags">
+              <span class="tag">AWS Lambda</span><span class="tag">S3</span>
+              <span class="tag">DynamoDB</span><span class="tag">HTML</span>
+              <span class="tag">CSS</span><span class="tag">JavaScript</span>
+            </div>
+
+            <div class="project-grid">
+              <div>
+                <div class="project-block-title">Project scope</div>
+                <p>
+                  A full-stack budget tracking application using a serverless backend architecture.
+                </p>
+              </div>
+
+              <div>
+                <div class="project-block-title">Testing work</div>
+                <ul>
+                  <li>Performed API and integration testing between the frontend, AWS Lambda functions, and DynamoDB.</li>
+                  <li>Tested data consistency across the application and backend components.</li>
+                  <li>Validated input handling and error scenarios.</li>
+                  <li>Focused on system reliability through integration and negative-path validation.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="additional-projects">
+          <article class="card">
+            <div class="project-kicker">Supporting project</div>
+            <h4>Chatbot for Social Robot Noor</h4>
+            <p style="margin-top:12px;">ROS · Google Speech API · Gemini API · Python</p>
+            <p style="margin-top:12px;">
+              Validated bilingual chatbot intent recognition and response accuracy; tested API integrations
+              and edge cases involving speech misrecognition, latency, and network interruptions.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="project-kicker">Supporting project</div>
+            <h4>Egyptian ALPR</h4>
+            <p style="margin-top:12px;">Python · OpenCV · TensorFlow · NumPy</p>
+            <p style="margin-top:12px;">
+              Validated a real-time Arabic license plate recognition system through functional,
+              accuracy, and dataset-based testing under varied lighting, occlusion, and low-resolution conditions.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="project-kicker">Supporting project</div>
+            <h4>ClubHub</h4>
+            <p style="margin-top:12px;">C# · SQL Server</p>
+            <p style="margin-top:12px;">
+              Developed and tested a desktop application, including CRUD validation, database integrity,
+              input validation, role-based access control, and user workflow scenarios.
+            </p>
+          </article>
+        </div>
+
+        <div class="project-cta card" style="margin-top:28px; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap;">
+          <div>
+            <h4 style="margin:0 0 6px;">Need a tester for your next project?</h4>
+            <p>Let's discuss your product, key workflows, and the testing support you need.</p>
+          </div>
+          <a class="button primary" href="mailto:alaaeldienhagar@gmail.com?subject=Discuss%20a%20Testing%20Project&amp;body=Hi%20Hagar%2C%0A%0AI%27d%20like%20to%20discuss%20a%20testing%20project.%0A%0AProject%20or%20product%3A%0ATesting%20needed%3A%0ATimeline%3A%0A%0AThanks.">Let's talk</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CREDENTIALS -->
+    <section id="credentials">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-heading-main">
+            <div class="section-number">06 / Credentials</div>
+            <h3>Education & recognition</h3>
+            <p class="section-intro">
+              Engineering education, professional testing certifications, and recognition for project, community, and entrepreneurship contributions.
+            </p>
+          </div>
+        </div>
+
+        <div class="credential-grid">
+          <article class="card credential">
+            <div class="project-kicker">Education</div>
+            <h4>BSc. — Communication & Information Engineering</h4>
+            <p>University of Science and Technology at Zewail City</p>
+            <small>Oct 2020 — Jun 2025</small>
+            <p style="margin-top:12px;">
+              Graduation Project: Voice-Controlled Assistive Soft-Robotic Glove<br />
+              Graduation Project Grade: A
+            </p>
+          </article>
+
+          <article class="card credential">
+            <div class="project-kicker">Certification</div>
+            <h4>ISTQB® Certified Tester — Testing with Generative AI (CT-GenAI)</h4>
+            <small>Jul 2026 · Credential ID: 260707007</small>
+          </article>
+
+          <article class="card credential">
+            <div class="project-kicker">Certification</div>
+            <h4>ISTQB® Certified Tester — Foundation Level (CTFL) v4</h4>
+            <small>Jan 2026 · Credential ID: 260122016</small>
+          </article>
+
+          <article class="card credential achievement">
+            <div class="project-kicker">Project Achievement</div>
+            <h4>Edafa VC Incubation Program</h4>
+            <p>
+              Selected as one of only 3 winning projects out of 44 at the university's graduation exhibition.
+            </p>
+          </article>
+
+          <article class="card credential achievement">
+            <div class="project-kicker">University Recognition</div>
+            <h4>Two Medals of Recognition</h4>
+            <p>
+              Received two medals of recognition at the end of my undergraduate studies: one for Community Service and one for Entrepreneurship.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="contact-box">
+          <div>
+            <div class="eyebrow" style="color:#BBD1D0;">Contact</div>
+            <h3>Need help testing your product?</h3>
+            <p>
+              Tell me about your product and testing needs. I can help validate critical workflows,
+              identify bugs, and document findings clearly. I'm also open to Junior QA opportunities.
+            </p>
+          </div>
+
+          <div class="contact-links">
+            <a class="contact-link" href="mailto:alaaeldienhagar@gmail.com?subject=Tell%20Me%20About%20Your%20Project&amp;body=Hi%20Hagar%2C%0A%0AI%27d%20like%20to%20tell%20you%20about%20a%20project%20or%20QA%20opportunity.%0A%0AProject%20or%20role%3A%0AWhat%20I%20need%20help%20with%3A%0ATimeline%3A%0A%0AThanks.">Tell Me About Your Project</a>
+            <a class="contact-link" href="https://www.linkedin.com/in/alaaeldienhagar/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="contact-link" href="https://github.com/Hagar-Alaaeldien" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    © 2026 Hagar Alaaeldien · Software Tester
+  </footer>
+
+</body>
+</html>
